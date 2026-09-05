@@ -1,0 +1,517 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B97EAED3ECB346348E61427E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A02D3F62E124EFE928BBBF8 /* GoogleService-Info.plist */; };
+		6FB4E32773B640F583DCD4BC /* CategoryStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8951DA06797E443EBB172242 /* CategoryStyle.swift */; };
+		E0B051345D9C4A848544B5C3 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B2E14356534F6A9425D631 /* AddTransactionView.swift */; };
+		498B104AD2E446D2984A1271 /* CategoryBreakdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F062C47423D44FB9A8EEA28 /* CategoryBreakdownView.swift */; };
+		118936EAEA0849D6BD77BB80 /* IncomeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992FE6524DAF4D8686354B80 /* IncomeListView.swift */; };
+		BB6B0F2EBF4F46BBB1B3B00E /* IncomeSourceTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B9532AE954A1EB1E608B5 /* IncomeSourceTransactionsView.swift */; };
+		90B9C6814E3A40E4BDD0ACB8 /* AuthLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932E82518764484CADE5C949 /* AuthLockView.swift */; };
+		624DA8F01D52455581ABCAB6 /* CompareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23370300B13D4FCA9E641D74 /* CompareView.swift */; };
+		A10DB4875DA24CD883682B2F /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE902C902E3B4D5595834360 /* RootTabView.swift */; };
+		194FDE3CA8774886943B2041 /* CategoryBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D21D989250E44F19CCBBB31 /* CategoryBudget.swift */; };
+		383E646704694D4795B7B366 /* CategoryTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E8D66845D04596974662D9 /* CategoryTransactionsView.swift */; };
+		3AF3A1BF28884592883BB61C /* MerchantRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE363F9831F94CC9B3C05ED1 /* MerchantRule.swift */; };
+		E528230353F041A2A5A3EB44 /* MerchantRuleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43D0429E81E47259E845408 /* MerchantRuleRepository.swift */; };
+		73CDA9F91224479080A0C110 /* FirestoreMerchantRuleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE833D6B47E4E19AD8DD956 /* FirestoreMerchantRuleRepository.swift */; };
+		816A9C0E7EF448DEA5191BF4 /* MockMerchantRuleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBDF9EEE39149FA83C237EC /* MockMerchantRuleRepository.swift */; };
+		1AE7688B127242E3A079DCCE /* MerchantRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD2DD9AE5824ED3996535F5 /* MerchantRulesView.swift */; };
+		3A27464644524FE4893F5423 /* BudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69392AF5E7BC487895D87DCE /* BudgetRepository.swift */; };
+		1574738EF23C4703B3E06BC2 /* FirestoreBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BA1EB857424D4D9EB8F1EB /* FirestoreBudgetRepository.swift */; };
+		5605A5AC9A884379A6470683 /* MockBudgetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE361D0D42084E93B879B325 /* MockBudgetRepository.swift */; };
+		00B8C51D2178483EB3ED263D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9884AFC8398F4991B2CBC43F /* Category.swift */; };
+		52002BEECA6D4CB29996FF44 /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675238B563E4257A1228C84 /* CategoryRepository.swift */; };
+		C97DDBDB91AA4B25A90E5BDC /* FirestoreCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F86513BD7446F2A45FB97D /* FirestoreCategoryRepository.swift */; };
+		0D175F74B4844B49B835FEE8 /* MockCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B44FCFF89740219DF25DED /* MockCategoryRepository.swift */; };
+		94446747A4A845C0BA01AD56 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4900AD320544D5A1E93182 /* Color+Hex.swift */; };
+		80E8DB5E931B469EB192BDED /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F54B15711F644E2B935D4E8 /* SettingsView.swift */; };
+		081BFF32D7B41446EB3D0D20 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23940C4884B0CC0E65EE7E34 /* TransactionListViewModel.swift */; };
+		107BDCF7E02BB5039EE56953 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D8E4F69066C618D40DA9F1A8 /* FirebaseFirestore */; };
+		162F45D3A12E4F72B81C6F25 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 626F35FF3DAB478D885EB943 /* FirebaseAuth */; };
+		65050F73458FAC624638A104 /* MockTransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707B2FE4E4D1B3945DF820B4 /* MockTransactionRepository.swift */; };
+		7B59C893A507EAF624000A50 /* FirestoreTransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F707FDF19B3569AE294E418 /* FirestoreTransactionRepository.swift */; };
+		81D693E0894BC096B08F6ACC /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227449BA20515C36D28005F5 /* TransactionListView.swift */; };
+		A1A3DB42CC94C959D3FD0C5E /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B4895268E19335F42B993A /* Transaction.swift */; };
+		C22C8B690213C7B0A29EEE95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C47014370B7F790330BA2FFD /* Assets.xcassets */; };
+		D3A22F613CD499DC58AB0FB3 /* ExpenseTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D82FEA89F391EA4A9CFB575 /* ExpenseTrackerApp.swift */; };
+		F0E6E8C5DFDB891DDB3857F4 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE4711EAEED84495F9182D /* TransactionRepository.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4A02D3F62E124EFE928BBBF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8951DA06797E443EBB172242 /* CategoryStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStyle.swift; sourceTree = "<group>"; };
+		55B2E14356534F6A9425D631 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
+		1F062C47423D44FB9A8EEA28 /* CategoryBreakdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBreakdownView.swift; sourceTree = "<group>"; };
+		992FE6524DAF4D8686354B80 /* IncomeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListView.swift; sourceTree = "<group>"; };
+		0A6B9532AE954A1EB1E608B5 /* IncomeSourceTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeSourceTransactionsView.swift; sourceTree = "<group>"; };
+		932E82518764484CADE5C949 /* AuthLockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLockView.swift; sourceTree = "<group>"; };
+		23370300B13D4FCA9E641D74 /* CompareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareView.swift; sourceTree = "<group>"; };
+		BE902C902E3B4D5595834360 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		1D21D989250E44F19CCBBB31 /* CategoryBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBudget.swift; sourceTree = "<group>"; };
+		30E8D66845D04596974662D9 /* CategoryTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTransactionsView.swift; sourceTree = "<group>"; };
+		EE363F9831F94CC9B3C05ED1 /* MerchantRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantRule.swift; sourceTree = "<group>"; };
+		C43D0429E81E47259E845408 /* MerchantRuleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantRuleRepository.swift; sourceTree = "<group>"; };
+		BEE833D6B47E4E19AD8DD956 /* FirestoreMerchantRuleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreMerchantRuleRepository.swift; sourceTree = "<group>"; };
+		6BBDF9EEE39149FA83C237EC /* MockMerchantRuleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMerchantRuleRepository.swift; sourceTree = "<group>"; };
+		BBD2DD9AE5824ED3996535F5 /* MerchantRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantRulesView.swift; sourceTree = "<group>"; };
+		69392AF5E7BC487895D87DCE /* BudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRepository.swift; sourceTree = "<group>"; };
+		08BA1EB857424D4D9EB8F1EB /* FirestoreBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreBudgetRepository.swift; sourceTree = "<group>"; };
+		BE361D0D42084E93B879B325 /* MockBudgetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBudgetRepository.swift; sourceTree = "<group>"; };
+		9884AFC8398F4991B2CBC43F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		1675238B563E4257A1228C84 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
+		B0F86513BD7446F2A45FB97D /* FirestoreCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreCategoryRepository.swift; sourceTree = "<group>"; };
+		51B44FCFF89740219DF25DED /* MockCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoryRepository.swift; sourceTree = "<group>"; };
+		EC4900AD320544D5A1E93182 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		4F54B15711F644E2B935D4E8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1D82FEA89F391EA4A9CFB575 /* ExpenseTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackerApp.swift; sourceTree = "<group>"; };
+		227449BA20515C36D28005F5 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
+		23940C4884B0CC0E65EE7E34 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		2C126B9E82517DFD361B9A71 /* ExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		707B2FE4E4D1B3945DF820B4 /* MockTransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTransactionRepository.swift; sourceTree = "<group>"; };
+		8F707FDF19B3569AE294E418 /* FirestoreTransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreTransactionRepository.swift; sourceTree = "<group>"; };
+		C47014370B7F790330BA2FFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C5B4895268E19335F42B993A /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		CEBE4711EAEED84495F9182D /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A90A877BE7F15F58CB43D84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				107BDCF7E02BB5039EE56953 /* FirebaseFirestore in Frameworks */,
+				162F45D3A12E4F72B81C6F25 /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11C3AA57D80675D1695DD8D5 = {
+			isa = PBXGroup;
+			children = (
+				E38F2C82473CC4C2FA574079 /* ExpenseTracker */,
+				1E51660FCE3C646E1767767C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1E51660FCE3C646E1767767C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C126B9E82517DFD361B9A71 /* ExpenseTracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		386AB1725855BDDF91220B81 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1D82FEA89F391EA4A9CFB575 /* ExpenseTrackerApp.swift */,
+				4A02D3F62E124EFE928BBBF8 /* GoogleService-Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5B8A2E2999790E7C6E6132B9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C5B4895268E19335F42B993A /* Transaction.swift */,
+				1D21D989250E44F19CCBBB31 /* CategoryBudget.swift */,
+				9884AFC8398F4991B2CBC43F /* Category.swift */,
+				EE363F9831F94CC9B3C05ED1 /* MerchantRule.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A22A9EE3AEE58AE3F5E1E382 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C47014370B7F790330BA2FFD /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B1BD05082CCEC0DA829B9453 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				227449BA20515C36D28005F5 /* TransactionListView.swift */,
+				23940C4884B0CC0E65EE7E34 /* TransactionListViewModel.swift */,
+				8951DA06797E443EBB172242 /* CategoryStyle.swift */,
+				55B2E14356534F6A9425D631 /* AddTransactionView.swift */,
+				1F062C47423D44FB9A8EEA28 /* CategoryBreakdownView.swift */,
+				992FE6524DAF4D8686354B80 /* IncomeListView.swift */,
+				0A6B9532AE954A1EB1E608B5 /* IncomeSourceTransactionsView.swift */,
+				932E82518764484CADE5C949 /* AuthLockView.swift */,
+				23370300B13D4FCA9E641D74 /* CompareView.swift */,
+				30E8D66845D04596974662D9 /* CategoryTransactionsView.swift */,
+				BE902C902E3B4D5595834360 /* RootTabView.swift */,
+				EC4900AD320544D5A1E93182 /* Color+Hex.swift */,
+				4F54B15711F644E2B935D4E8 /* SettingsView.swift */,
+				BBD2DD9AE5824ED3996535F5 /* MerchantRulesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E38F2C82473CC4C2FA574079 /* ExpenseTracker */ = {
+			isa = PBXGroup;
+			children = (
+				386AB1725855BDDF91220B81 /* App */,
+				EC248869E3F9893B6D745431 /* Data */,
+				5B8A2E2999790E7C6E6132B9 /* Models */,
+				A22A9EE3AEE58AE3F5E1E382 /* Resources */,
+				B1BD05082CCEC0DA829B9453 /* Views */,
+			);
+			path = ExpenseTracker;
+			sourceTree = "<group>";
+		};
+		EC248869E3F9893B6D745431 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8F707FDF19B3569AE294E418 /* FirestoreTransactionRepository.swift */,
+				707B2FE4E4D1B3945DF820B4 /* MockTransactionRepository.swift */,
+				CEBE4711EAEED84495F9182D /* TransactionRepository.swift */,
+				69392AF5E7BC487895D87DCE /* BudgetRepository.swift */,
+				08BA1EB857424D4D9EB8F1EB /* FirestoreBudgetRepository.swift */,
+				BE361D0D42084E93B879B325 /* MockBudgetRepository.swift */,
+				1675238B563E4257A1228C84 /* CategoryRepository.swift */,
+				B0F86513BD7446F2A45FB97D /* FirestoreCategoryRepository.swift */,
+				51B44FCFF89740219DF25DED /* MockCategoryRepository.swift */,
+				C43D0429E81E47259E845408 /* MerchantRuleRepository.swift */,
+				BEE833D6B47E4E19AD8DD956 /* FirestoreMerchantRuleRepository.swift */,
+				6BBDF9EEE39149FA83C237EC /* MockMerchantRuleRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3513847C6F92D3754D258074 /* ExpenseTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7216D6AA501E6BB769D4995 /* Build configuration list for PBXNativeTarget "ExpenseTracker" */;
+			buildPhases = (
+				38F7F2BFF52A041C3B0EEC03 /* Sources */,
+				4756DB68F54EC8BD6B64F4D2 /* Resources */,
+				3A90A877BE7F15F58CB43D84 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExpenseTracker;
+			packageProductDependencies = (
+				D8E4F69066C618D40DA9F1A8 /* FirebaseFirestore */,
+				626F35FF3DAB478D885EB943 /* FirebaseAuth */,
+			);
+			productName = ExpenseTracker;
+			productReference = 2C126B9E82517DFD361B9A71 /* ExpenseTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCF189F5D2D9FC3BB06449CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 77CF17364857E655D9A461FA /* Build configuration list for PBXProject "ExpenseTracker" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 11C3AA57D80675D1695DD8D5;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				0053A1F9B3B8BD40BE1E0EE4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1E51660FCE3C646E1767767C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3513847C6F92D3754D258074 /* ExpenseTracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4756DB68F54EC8BD6B64F4D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C22C8B690213C7B0A29EEE95 /* Assets.xcassets in Resources */,
+				B97EAED3ECB346348E61427E /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		38F7F2BFF52A041C3B0EEC03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3A22F613CD499DC58AB0FB3 /* ExpenseTrackerApp.swift in Sources */,
+				7B59C893A507EAF624000A50 /* FirestoreTransactionRepository.swift in Sources */,
+				65050F73458FAC624638A104 /* MockTransactionRepository.swift in Sources */,
+				A1A3DB42CC94C959D3FD0C5E /* Transaction.swift in Sources */,
+				81D693E0894BC096B08F6ACC /* TransactionListView.swift in Sources */,
+				081BFF32D7B41446EB3D0D20 /* TransactionListViewModel.swift in Sources */,
+				F0E6E8C5DFDB891DDB3857F4 /* TransactionRepository.swift in Sources */,
+				6FB4E32773B640F583DCD4BC /* CategoryStyle.swift in Sources */,
+				E0B051345D9C4A848544B5C3 /* AddTransactionView.swift in Sources */,
+				498B104AD2E446D2984A1271 /* CategoryBreakdownView.swift in Sources */,
+				118936EAEA0849D6BD77BB80 /* IncomeListView.swift in Sources */,
+				BB6B0F2EBF4F46BBB1B3B00E /* IncomeSourceTransactionsView.swift in Sources */,
+				90B9C6814E3A40E4BDD0ACB8 /* AuthLockView.swift in Sources */,
+				624DA8F01D52455581ABCAB6 /* CompareView.swift in Sources */,
+				A10DB4875DA24CD883682B2F /* RootTabView.swift in Sources */,
+				194FDE3CA8774886943B2041 /* CategoryBudget.swift in Sources */,
+				383E646704694D4795B7B366 /* CategoryTransactionsView.swift in Sources */,
+				3A27464644524FE4893F5423 /* BudgetRepository.swift in Sources */,
+				1574738EF23C4703B3E06BC2 /* FirestoreBudgetRepository.swift in Sources */,
+				5605A5AC9A884379A6470683 /* MockBudgetRepository.swift in Sources */,
+				00B8C51D2178483EB3ED263D /* Category.swift in Sources */,
+				52002BEECA6D4CB29996FF44 /* CategoryRepository.swift in Sources */,
+				C97DDBDB91AA4B25A90E5BDC /* FirestoreCategoryRepository.swift in Sources */,
+				0D175F74B4844B49B835FEE8 /* MockCategoryRepository.swift in Sources */,
+				94446747A4A845C0BA01AD56 /* Color+Hex.swift in Sources */,
+				80E8DB5E931B469EB192BDED /* SettingsView.swift in Sources */,
+				3AF3A1BF28884592883BB61C /* MerchantRule.swift in Sources */,
+				E528230353F041A2A5A3EB44 /* MerchantRuleRepository.swift in Sources */,
+				73CDA9F91224479080A0C110 /* FirestoreMerchantRuleRepository.swift in Sources */,
+				816A9C0E7EF448DEA5191BF4 /* MockMerchantRuleRepository.swift in Sources */,
+				1AE7688B127242E3A079DCCE /* MerchantRulesView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0122C88A3CB23C016B2FD719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		390EC5C204C30B612C9209F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7Q38ZKRQ82;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "shrADD.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Used to lock your Income tab so only you can view it.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shraddhasriram.expensetracker.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		39A2E43E371983CACCD6A60B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7Q38ZKRQ82;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "shrADD.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Used to lock your Income tab so only you can view it.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shraddhasriram.expensetracker.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		E6CDF28B0EC8603E89C4B00C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		77CF17364857E655D9A461FA /* Build configuration list for PBXProject "ExpenseTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0122C88A3CB23C016B2FD719 /* Debug */,
+				E6CDF28B0EC8603E89C4B00C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D7216D6AA501E6BB769D4995 /* Build configuration list for PBXNativeTarget "ExpenseTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39A2E43E371983CACCD6A60B /* Debug */,
+				390EC5C204C30B612C9209F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0053A1F9B3B8BD40BE1E0EE4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.20.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D8E4F69066C618D40DA9F1A8 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0053A1F9B3B8BD40BE1E0EE4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		626F35FF3DAB478D885EB943 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0053A1F9B3B8BD40BE1E0EE4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FCF189F5D2D9FC3BB06449CE /* Project object */;
+}
