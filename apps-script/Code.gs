@@ -4,7 +4,7 @@
 
 const CONFIG = {
   firestoreProjectId: 'expense-tracker-7d7f1',
-  gmailSearchQuery: '(subject:"Card Transaction Alert" OR subject:"Transaction Alerts" OR subject:"Yay! Transaction successful" OR subject:"received a transfer") -label:dbs-processed',
+  gmailSearchQuery: '(subject:"Card Transaction Alert" OR subject:"Transaction Alerts" OR subject:"Yay! Transaction successful" OR subject:"received a transfer" OR ("You have received" "via PayNow" PRIMEPLUS)) -label:dbs-processed',
   processedLabel: 'dbs-processed'
   // Discord webhook URL lives in Script Properties (DISCORD_WEBHOOK_URL), not
   // here — same place as FIREBASE_PRIVATE_KEY and ANTHROPIC_API_KEY, so this
@@ -218,6 +218,9 @@ function sendDiscordNotification_(title, message) {
 // Picks the right parser based on the email's subject line, since DBS and
 // Trust (and any bank added later) each have their own alert format.
 function parseAlert_(subject, body, receivedDate, customRules, availableCategories) {
+  if (/You have received SGD\s*[\d,]+\.\d{2}\s+via\s+PayNow\s+on\s/i.test(body)) {
+    return parsePayNowIncomeAlert_(body);
+  }
   if (subject.indexOf('Transaction successful') !== -1) {
     return parseTrustAlert_(body, receivedDate, customRules, availableCategories);
   }
@@ -311,6 +314,54 @@ function parseDbsIncomeAlert_(body, receivedDate) {
   };
 }
 
+// DBS PayNow alert body looks like:
+// "You have received SGD 142.50 via PayNow on 12 Oct 2026 18:22 SGT.
+//  From: PRIMEPLUS INTERNATIONAL SERVICE PTE . LTD."
+// Unlike the FAST-transfer alert above there's no word "transfer", and not
+// every PayNow you receive is income (friends splitting a bill, etc.), so only
+// senders listed in PAYNOW_INCOME_SENDERS get logged.
+const PAYNOW_INCOME_SENDERS = ['primeplus'];
+
+function parsePayNowIncomeAlert_(body) {
+  const amountMatch = body.match(/You have received SGD\s*([\d,]+\.\d{2})\s+via\s+PayNow\s+on\s+(\d{1,2})\s+(\w{3})\s+(\d{4})\s+(\d{2}):(\d{2})/i);
+  const fromMatch = body.match(/From:\s*(.+)/i);
+
+  if (!amountMatch || !fromMatch) {
+    return null;
+  }
+
+  const sender = fromMatch[1].trim();
+  const isIncomeSender = PAYNOW_INCOME_SENDERS.some(name => sender.toLowerCase().indexOf(name) !== -1);
+  if (!isIncomeSender) {
+    return null;
+  }
+
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const date = new Date(
+    parseInt(amountMatch[4], 10),
+    months.indexOf(amountMatch[3]),
+    parseInt(amountMatch[2], 10),
+    parseInt(amountMatch[5], 10),
+    parseInt(amountMatch[6], 10)
+  );
+
+  return {
+    merchant: resolveIncomeSource_(sender),
+    amount: parseFloat(amountMatch[1].replace(/,/g, '')),
+    date: date,
+    category: 'Income',
+    type: 'income'
+  };
+}
+
+// Dry run: parses sample alert text and logs the result, writes nothing.
+function testPayNowParser() {
+  const primeplus = 'You have received SGD 142.50 via PayNow on 12 Oct 2026 18:22 SGT.\n\nFrom: PRIMEPLUS INTERNATIONAL SERVICE PTE . LTD.\nTo: Your DBS/ POSB account ending 6462';
+  const friend = 'You have received SGD 20.00 via PayNow on 12 Oct 2026 18:22 SGT.\n\nFrom: TAN AH KOW\nTo: Your DBS/ POSB account ending 6462';
+  Logger.log('PrimePlus: ' + JSON.stringify(parseAlert_('', primeplus, new Date(), [], [])));
+  Logger.log('Friend (should be null): ' + JSON.stringify(parseAlert_('', friend, new Date(), [], [])));
+}
+
 // Maps a raw sender name from a bank alert to a friendlier label. Add entries
 // as you notice recurring senders — e.g. a client who pays through a payment
 // processor whose name on its own doesn't tell you who it actually is.
@@ -320,7 +371,8 @@ const INCOME_SOURCE_NAMES = {
   'bluetree': 'Bluetree',
   'curious minds': 'Curious Minds',
   'allowance': 'Mastermath',
-  'natarajan sriram': 'Pocket Money'
+  'natarajan sriram': 'Pocket Money',
+  'primeplus': 'PrimePlus'
 };
 
 function resolveIncomeSource_(rawSender) {
