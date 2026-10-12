@@ -96,7 +96,7 @@ struct CategoryBreakdownView: View {
                 }
             }
             .navigationDestination(item: $selectedCategoryName) { name in
-                CategoryTransactionsView(viewModel: viewModel, category: name, color: viewModel.categoryColor(for: name))
+                CategoryTransactionsView(viewModel: viewModel, category: name, color: viewModel.categoryColor(for: name), month: selectedMonth)
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {

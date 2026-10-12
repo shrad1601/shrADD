@@ -4,10 +4,13 @@ struct CategoryTransactionsView: View {
     @ObservedObject var viewModel: TransactionListViewModel
     let category: String
     let color: Color
+    let month: Date
     @State private var editingTransaction: Transaction?
 
     private var transactions: [Transaction] {
-        viewModel.sortedTransactions.filter { $0.category == category }
+        viewModel.transactions
+            .filter { $0.type == .expense && $0.category == category && Calendar.current.isDate($0.date, equalTo: month, toGranularity: .month) }
+            .sorted { $0.date > $1.date }
     }
 
     private var total: Double {
@@ -19,7 +22,7 @@ struct CategoryTransactionsView: View {
             Palette.background.ignoresSafeArea()
 
             if transactions.isEmpty {
-                Text("No transactions in \(category) this month")
+                Text("No transactions in \(category) in \(viewModel.monthLabel(for: month).capitalized)")
                     .font(.system(size: 14))
                     .foregroundStyle(Palette.mutedText)
             } else {
@@ -70,6 +73,6 @@ struct CategoryTransactionsView: View {
 
 #Preview {
     NavigationStack {
-        CategoryTransactionsView(viewModel: TransactionListViewModel(repository: MockTransactionRepository(), budgetRepository: MockBudgetRepository(), categoryRepository: MockCategoryRepository()), category: "Food", color: .orange)
+        CategoryTransactionsView(viewModel: TransactionListViewModel(repository: MockTransactionRepository(), budgetRepository: MockBudgetRepository(), categoryRepository: MockCategoryRepository()), category: "Food", color: .orange, month: Date())
     }
 }
