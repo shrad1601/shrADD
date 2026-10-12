@@ -13,8 +13,11 @@ struct AddTransactionView: View {
     @State private var categories: [String]
     @State private var isAddingCategory = false
     @State private var newCategoryName = ""
+    @State private var hasUserEditedCategory = false
+    @State private var isApplyingSuggestion = false
 
     private let existingId: String?
+    private let merchantSuggestions: [String: String]
     let onAddCategory: (String) async -> String
 
     /// id is nil when creating a new transaction, or the existing id when editing one.
@@ -24,6 +27,7 @@ struct AddTransactionView: View {
         existing: Transaction? = nil,
         initialType: TransactionType = .expense,
         categories: [String],
+        merchantSuggestions: [String: String] = [:],
         onAddCategory: @escaping (String) async -> String,
         onSave: @escaping (_ id: String?, _ merchant: String, _ amount: Double, _ category: String, _ date: Date, _ note: String?, _ type: TransactionType) -> Void
     ) {
@@ -35,6 +39,7 @@ struct AddTransactionView: View {
         self._date = State(initialValue: existing?.date ?? Date())
         self._note = State(initialValue: existing?.note ?? "")
         self._categories = State(initialValue: categories)
+        self.merchantSuggestions = merchantSuggestions
         self.onAddCategory = onAddCategory
         self.onSave = onSave
     }
@@ -61,11 +66,19 @@ struct AddTransactionView: View {
 
                 Section(type == .expense ? "Transaction" : "Income") {
                     TextField(type == .expense ? "Merchant" : "Source", text: $merchant)
+                        .onChange(of: merchant) { _, newValue in applySuggestedCategory(forMerchant: newValue) }
                     TextField("Amount", text: $amountText)
                         .keyboardType(.decimalPad)
                     if type == .expense {
                         Picker("Category", selection: $category) {
                             ForEach(categories, id: \.self) { Text($0) }
+                        }
+                        .onChange(of: category) { _, _ in
+                            if isApplyingSuggestion {
+                                isApplyingSuggestion = false
+                            } else {
+                                hasUserEditedCategory = true
+                            }
                         }
                         Button("Add new category") { isAddingCategory = true }
                     }
@@ -108,6 +121,16 @@ struct AddTransactionView: View {
                 Button("Cancel", role: .cancel) { newCategoryName = "" }
             }
         }
+    }
+
+    // Only auto-fills while adding a new transaction, and stops once the
+    // user has picked a category themselves — their choice always wins.
+    private func applySuggestedCategory(forMerchant merchant: String) {
+        guard existingId == nil, !hasUserEditedCategory else { return }
+        let key = merchant.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard let suggested = merchantSuggestions[key], categories.contains(suggested) else { return }
+        isApplyingSuggestion = true
+        category = suggested
     }
 
     private var navigationTitle: String {

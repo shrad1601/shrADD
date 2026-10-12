@@ -174,6 +174,23 @@ final class TransactionListViewModel: ObservableObject {
         }
     }
 
+    // Lets the "add expense" form default to whatever category a merchant was
+    // last categorized under, so repeat merchants (e.g. "Starbucks") don't
+    // need to be recategorized every time. Keyed by lowercased merchant name;
+    // later (more recent) transactions overwrite earlier ones in the map.
+    var merchantCategorySuggestions: [String: String] {
+        var suggestions: [String: String] = [:]
+        let expenses = transactions
+            .filter { $0.type == .expense }
+            .sorted { $0.date < $1.date }
+        for transaction in expenses {
+            let key = transaction.merchant.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+            guard !key.isEmpty else { continue }
+            suggestions[key] = transaction.category
+        }
+        return suggestions
+    }
+
     func categoryColor(for name: String) -> Color {
         if let match = categories.first(where: { $0.name == name }) {
             return Color(hex: match.colorHex)

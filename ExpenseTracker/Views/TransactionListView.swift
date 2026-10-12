@@ -125,7 +125,7 @@ struct TransactionListView: View {
             await viewModel.load()
         }
         .sheet(isPresented: $isShowingAddSheet) {
-            AddTransactionView(categories: viewModel.categories.map(\.name)) { name in
+            AddTransactionView(categories: viewModel.categories.map(\.name), merchantSuggestions: viewModel.merchantCategorySuggestions) { name in
                 await viewModel.addCustomCategory(name: name)
             } onSave: { id, merchant, amount, category, date, note, type in
                 Task { await viewModel.addTransaction(merchant: merchant, amount: amount, category: category, date: date, note: note, type: type) }
