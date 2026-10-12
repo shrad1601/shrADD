@@ -6,6 +6,7 @@ import LocalAuthentication
 // locking the phone re-locks this content the next time it's viewed.
 struct AuthLockView<Content: View>: View {
     @State private var isUnlocked = false
+    @State private var isAuthenticating = false
     @State private var authError: String?
     @Environment(\.scenePhase) private var scenePhase
     let reason: String
@@ -23,7 +24,13 @@ struct AuthLockView<Content: View>: View {
             if !isUnlocked { authenticate() }
         }
         .onChange(of: scenePhase) { _, newPhase in
-            if newPhase != .active {
+            // Face ID's own system prompt briefly flips the scene to
+            // `.inactive` — the same transient state used for Control Center,
+            // notifications, share sheets, etc. Only `.background` means the
+            // user actually left the app, so only that re-locks. Also skip
+            // while an authenticate() call is in flight, so its own prompt
+            // can never undo the unlock it's in the middle of granting.
+            if newPhase == .background && !isAuthenticating {
                 isUnlocked = false
             }
         }
@@ -61,8 +68,10 @@ struct AuthLockView<Content: View>: View {
             isUnlocked = true
             return
         }
+        isAuthenticating = true
         context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, evaluateError in
             DispatchQueue.main.async {
+                isAuthenticating = false
                 isUnlocked = success
                 authError = success ? nil : (evaluateError?.localizedDescription ?? "Authentication failed")
             }
